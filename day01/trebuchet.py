@@ -5,7 +5,7 @@ from lib import lineParser
 #create new list with each line in file as separate item
 inputAsList = lineParser('./trebuchet.txt')
 
-#Don't judge me
+#don't judge me
 def wordsToDigit(string):
     return string.lower()\
     .replace('one', 'o1e')\
@@ -22,6 +22,7 @@ totalSum = 0
 #loop through each line in list
 for line in inputAsList:
     formattedLine = wordsToDigit(line)
+
     digitsPerLine = []
     #append each digit in line to array
     for character in formattedLine:
@@ -31,15 +32,5 @@ for line in inputAsList:
     digitsAsInt = int(digitsPerLine[0] + digitsPerLine[-1])
     totalSum += digitsAsInt
 
-print('Total sum is ' + str(totalSum))
-
-
-
-
-
-
-
-    
-        
-        
+print('Total sum is ' + str(totalSum))   
 
