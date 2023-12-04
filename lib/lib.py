@@ -1,4 +1,8 @@
-def lineParser(filePath):
+def lineParser(filePath, stripNewlineChars):
     with open(filePath) as file:
-        listOfLinesInFile = file.readlines()
-        return listOfLinesInFile
+        if stripNewlineChars == True:
+            newLineCharsStripped = []
+            for line in file.readlines():
+                newLineCharsStripped.append(line.strip('\n'))
+            return newLineCharsStripped
+        return file.readlines()
